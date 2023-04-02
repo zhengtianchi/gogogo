@@ -16,7 +16,7 @@ BDB、HEAP、ISAM、MERGE、MyISAM、InnoDB以及Gemeni这7种Mysql表类型
 
 MyISAM：
 
-```
+```shell
 不支持事务，但是每次查询都是原子的；
 
 支持表级锁，即每次操作是对整个表加锁；
