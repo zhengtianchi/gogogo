@@ -24,7 +24,7 @@ type hmap struct {
     noverflow uint16  //// 溢出的bucket个数
     hash0     uint32 // hash seed
 
-    buckets    unsafe.Pointer    //buckets 数组指针
+    buckets    unsafe.Pointer    //buckets是一个指针指向一个长度为2^B的数组，数组的每个元素是bmap类型，该结构包含8个key/value，称为一个桶
     oldbuckets unsafe.Pointer  // 扩容的时候用于赋值的buckets数组
     nevacuate  uintptr       // 搬迁进度
 
