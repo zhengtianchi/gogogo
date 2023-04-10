@@ -165,7 +165,7 @@ Go语言解决hash冲突不是链表，实际**主要**用的数组(内存上的
 
 hmap的源码和地址如下：
 
-```
+```go
 //https://github.com/golang/go/blob/go1.13.8/src/runtime/map.go
 type hmap struct {
 	count     int 
