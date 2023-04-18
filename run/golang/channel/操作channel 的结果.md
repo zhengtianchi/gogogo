@@ -17,3 +17,7 @@
 
 
 读、写一个 nil channel 都会被阻塞。
+
+
+
+如果判断golang的channel是否关闭，**data, ok := <- chan，当ok不是true的时候，说明是channel关闭了**。
