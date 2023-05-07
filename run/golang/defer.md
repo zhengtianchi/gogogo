@@ -2,6 +2,22 @@
 
 
 
+defer是在return之前执行的。这个在 [官方文档](http://golang.org/ref/spec#defer_statements)中是明确说明了的。要使用defer时不踩坑，最重要的一点就是要明白，**return xxx这一条语句并不是一条原子指令!**
+
+
+
+函数返回的过程是这样的：先给返回值赋值，然后调用defer表达式，最后才是返回到调用函数中
+
+eturn xxx会被改写成:
+
+```
+返回值 = xxx
+调用defer函数
+空的return
+```
+
+
+
 ### 知识点1：defer的执行顺序
 
 多个defer出现的时候，**它是一个“栈”的关系，也就是先进后出**。一个函数中，写在前面的defer会比写在后面的defer调用的晚。
